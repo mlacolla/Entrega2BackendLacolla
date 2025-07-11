@@ -1,0 +1,20 @@
+{
+  "name": "entrega2backendlacolla",
+  "version": "1.0.0",
+  "description": "1) npm init -y  \r crea el package json / archivo de configuracion. \r 2) En el archivo package.json se agrega debajo del main   \"type\": \"module\",\r 3) En www.npmjs.com estan las librerias de js. / momento en consola:  npm install moment\r 4) \r -Instalar express para levantar el servidor \r  npm install express\r Para que el servicio se corra automaticamente Instalamos > libreria de forma global en la compu   \r npm install -g nodemon\r 5) Instalamos 3 librerias juntas\r Controlar instalacion de express para levantar el servidor, de lo contrario>  npm install express express-handlebars socket.io",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "moment": "^2.30.1",
+    "multer": "^2.0.1",
+    "socket.io": "^4.8.1"
+  }
+}

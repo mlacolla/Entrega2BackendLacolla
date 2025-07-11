@@ -1,0 +1,28 @@
+<div class="dashboard">
+  <h1 class="dashboard-title">Spa Galáctico</h1>
+  {{#with user}}
+  <div class="user-info">
+    <h2 class="username">{{username}}</h2>
+    {{#if isAdmin}}
+    <h3 class="admin-message admin-true">Permisos de administrador</h3>
+    <a href="./realTimeProducts"> <button>Agregar producto Socket</button> </a>
+    {{else}}
+    <h3 class="admin-message admin-false">No tienes permisos de administrador</h3>
+    {{/if}}
+  </div>
+  {{/with}}
+
+  <div class="product-grid">
+    {{#each products}}
+    <div class="product-card">
+      <div class="product-image-container">
+        <img class="product-image" src={{this.thumbnail}} alt="">
+      </div>
+      <h2 class="product-title">{{this.title}}</h2>
+      <h3 class="product-price">Precio: {{this.price}}</h3>
+      <h3> Stock: {{this.stock}} </h3>
+
+    </div>
+    {{/each}}
+  </div>
+</div>

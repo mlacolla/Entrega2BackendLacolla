@@ -1,0 +1,59 @@
+{{!-- 0 --}}
+<div class="dashboard">
+  <h1 class="dashboard-title">Spa Galáctico Socket</h1>
+ {{#with user}}
+    <div class="user-info">
+      <h2 class="username">{{username}}</h2>
+      {{#if isAdmin}}
+        <h3 class="admin-message admin-true">Permisos de administrador</h3>
+      {{else}}
+        <h3 class="admin-message admin-false">No tienes permisos de administrador</h3>
+      {{/if}}
+    </div>
+  {{/with}}
+
+
+
+  <button id="volver-btn" type="button">Volver</button>
+
+  <script>
+    document.getElementById('volver-btn').addEventListener('click', () => {
+      window.location.href = '/';
+    });
+  </script>
+
+
+    <div>
+  <form id="formNewProduct"> 
+    {{!-- <form id="formNewProduct" action="http://localhost:8080/api/products" method="post" enctype="multipart/form-data">   --}}
+
+      <input type="text" name="title" placeholder="ingrese el producto" required>
+      <input type="number" name="price" placeholder="ingrese el precio" required>
+       <input type="number" name="stock" placeholder="ingrese el stock" required> 
+     {{!-- <input type="file" name="file"> --}}
+      <button type="submit">Enviar</button>
+    </form>
+</div>
+
+
+<div  id="productsList" class="product-grid">
+  {{!-- <div class="product-grid"> --}}
+    {{#each products}}
+      <div class="product-card">
+        <div class="product-image-container">
+      <button onclick="deleteProduct({{this.id}})">Eliminar</button>
+          <img class="product-image" src={{this.thumbnail}} alt="">
+        </div>
+        <h2 class="product-title">{{this.title}}</h2>
+        <h3 class="product-price">Precio: {{this.price}}</h3>
+        <h3> Stock: {{this.stock}} </h3>
+      </div>
+    {{/each}}
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/index.js"></script>
+
+
+
+

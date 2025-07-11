@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "title": "Masajes relajantes",
+    "price": 33000,
+    "stock": 2,
+    "status": true,
+    "thumbnail": "/img/masajes.png"
+  }
+]
